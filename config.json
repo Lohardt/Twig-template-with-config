@@ -1,0 +1,27 @@
+{
+    "title": "The Awesome test site",
+    "favicon": {
+        "show": false,
+        "type":"image/png",
+        "type_description": "type can be image/png, image/gif. Leave it empty if using ico",
+        "url": "somepath/image.png" 
+    },
+
+    "apple_touch_icon": {
+        "show": false,
+        "shine": true,
+        "url": "somepath/image.png" 
+    },
+
+    "components": {
+        "jquery": true,
+        "jqueryui": true,
+        "jquerymobile": false,
+        "jqueryvalidate": true,
+        "bootstrap": true,
+        "awesomefont": true,
+        "cssreset": true,
+        "ie8support": true,
+        "pure": false
+    }
+}

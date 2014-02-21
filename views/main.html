@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>{{title}}</title>
+		
+		{% if favicon.show %}
+		<link rel="shortcut icon" {% if favicon.type %} type="{{favicon.type}}" {% endif %} href="{{favicon.url}}" />
+		{% endif %}
+
+ 		{% if apple_touch_icon.show %}
+			{% if apple_touch_icon.shine %}
+ 			<link rel="apple-touch-icon" href="({apple_touch_icon.url}}" />
+			{% else %}
+ 			<link rel="apple-touch-icon-precomposed" href="({apple_touch_icon.url}}" />
+ 			{% endif %}
+ 		{% endif %}
+
+		{% if components.ie8support %}
+		<!-- Add new HTML5 elements -->	
+			    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+			    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+			    <!--[if lt IE 9]>
+			      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+			    <![endif]-->
+		{% endif %}
+
+		{% if components.cssreset %}	    
+		<!-- CSS Reset -->	
+			<style>
+			  article, aside, details, figcaption, figure, footer, header,
+			  hgroup, menu, nav, section { display: block; }
+			</style>
+			
+			<!-- html5doctor.com -->
+			<link rel="stylesheet" href="vendors/htmldoctor/reset.css">
+		{% endif %}
+
+		{% if components.jquery %}
+			
+			{% if components.jqueryui %}
+			<!-- jQuery ui CSS CDN -->
+			<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+			{% endif %}
+
+			{% if components.jquerymobile %}
+				<!-- jQuerymobile -->
+				<link rel="stylesheet" href="//code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
+			{% endif %}
+
+		{% endif %}
+		
+		{% if components.bootstrap %}
+
+		<!-- BOOTSTRAP CSS CDN -->
+		
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+			
+			<!-- Optional theme (like Bootstrap's 2.x) -->
+			<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+   
+		{% endif %}
+
+		{% if components.pure %}
+			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
+		{% endif %}
+	</head>
+	<body>
+		<h1>{{title}}</h1>
+		<p>Hello {{profile.firstname}} {{profile.lastname}}</p>
+		
+
+	   My friends are:
+	        <ul>
+	        {% for person in profile.friends %}
+	            <li>{{ person.firstname}} {{ person.lastname }}</li>
+	        {% endfor %}
+	        </ul>
+
+	{% if components.jquery %}
+		<!-- jQuery -->
+	    	
+	    	<!-- jQuery CDN (also necessary for Bootstrap's JavaScript plugins) -->
+	    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	    	
+	    	{% if components.jqueryui %}
+		    	<!-- jQuery ui CDN (Datepicker ect) -->
+		    	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		    {% endif %}
+
+		    {% if components.jqueryvalidate %}
+		    	<!-- jQuery validate -->
+		    	<script src="vendors/jquery/validate/1.1.2/jquery-validate.min.js"></script>
+			{% endif %}
+
+		{% if components.bootstrap %}
+
+	    <!-- BOOTSTRAP JavaScript CDN -->
+	    			
+	    	<!-- Latest compiled and minified JavaScript -->
+			<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	  	
+	  	{% endif %}
+	{% endif %}
+
+  </body>
+</html>
