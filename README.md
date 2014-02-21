@@ -3,5 +3,4 @@ Twig-template-with-config
 
 Fidling with a configurable twig template
 
-
-more info will follow
+Feel free to comment, ideas are welcome.
