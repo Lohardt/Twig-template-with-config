@@ -28,7 +28,7 @@ $twig = new Twig_Environment($loader, array(
 
 $template = $twig->loadTemplate('main.html');
 
-
+//dummy data
 $profile = array(
     'firstname' => 'Svend',
     'lastname' => 'Hansen',
